@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import { BsFillPlayFill, BsPauseFill } from "react-icons/bs";
 
 let intervalId = 0;
 function App() {
@@ -44,6 +45,7 @@ function App() {
           }}
         >
           Start
+          <BsFillPlayFill style={{ width: "1.2rem", height: "1.2rem" }} />
         </button>
         <button
           onClick={() => {
@@ -51,6 +53,7 @@ function App() {
           }}
         >
           Stop
+          <BsPauseFill style={{ width: "1.2rem", height: "1.2rem" }} />
         </button>
       </div>
     </div>
