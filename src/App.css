@@ -1,38 +1,95 @@
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .App {
+  position: relative;
+}
+
+h1 {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.loader {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  position: relative;
+}
+
+.percent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+svg {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  animation: rotate 2s linear infinite;
+}
+
+svg circle {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke-width: 10;
+  stroke: #eee;
+  stroke-linecap: round;
+  transform: translate(5px, 5px);
+  stroke-dasharray: 440;
+  stroke-dashoffset: 0;
+  animation: animate 4s linear infinite;
+  transition: all 100ms ease;
+}
+
+svg circle:nth-child(2) {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke-width: 10;
+  stroke: #e38b29;
+  stroke-linecap: round;
+  transform: translate(5px, 5px);
+  stroke-dasharray: 440;
+  stroke-dashoffset: 0;
+  animation: animate 4s linear infinite;
+  transition: all 100ms ease;
+}
+
+button {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
   color: white;
+  background-color: #e38b29;
+  border-radius: 5px;
+  border: none;
+  transition: all 300ms ease;
+  cursor: pointer;
+  margin-top: 2rem;
+  margin-inline: 2rem;
 }
 
-.App-link {
-  color: #61dafb;
+.button_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* 
+@keyframes animate {
+  0% {
+    stroke-dashoffset: 440;
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    stroke-dashoffset: 0;
   }
-}
+  100% {
+    stroke-dashoffset: 440;
+  }
+} */
